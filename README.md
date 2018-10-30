@@ -36,3 +36,7 @@ The post request expects a JSON body with the following format:
 }
 ```
 
+The server can be started by running
+```
+node index.js path/to/config.js
+```
