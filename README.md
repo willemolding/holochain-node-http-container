@@ -8,7 +8,7 @@ This project combines holochain-nodejs and express to allow holochain hApp funct
 
 All configuration is done via a config.json file. The HTTP container must be started with the path to a config as the argument. The config file has the following structure:
 
-```json
+```javascript
 {
 	"port": "3000", // use whatever port you like
 	"happs": {
@@ -26,7 +26,7 @@ All happ/zome function are exposed at a single HTTP POST endpoint `/call/`
 
 The post request expects a JSON body with the following format:
 
-```json
+```javascript
 {
 	"happ": "happ-name",
 	"zome": "zome-name",
