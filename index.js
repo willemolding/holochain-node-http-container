@@ -1,3 +1,4 @@
+var fs = require("fs");
 const express = require('express')
 var bodyParser = require('body-parser');
 
@@ -13,11 +14,15 @@ let installedHapps = {};
 ======================================*/
 
 server.post('/call/', (req, res) => {
-	const {happ, zome, capability, func, data} = req.body;
+	let {happ, zome, capability, func, data} = req.body;
+
+	data = data || {};
 
 	console.log();
 	console.log("Calling: ", {happ, zome, capability, func});
 	console.log("With: ", data);
+
+
 
 	try {
 		const result = installedHapps[happ].call(zome, capability, func, JSON.stringify(data));
@@ -40,7 +45,8 @@ let config;
 
 if(configPath) {
 	try {
-		config = require(configPath);
+		// config = require(configPath);
+		config = JSON.parse(fs.readFileSync(configPath));
 	} catch (err) {
 		console.error("Error:", configPath, "does not exist");
 		process.exit()
