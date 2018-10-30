@@ -1,0 +1,15 @@
+{
+  "name": "holochain-node-http-container",
+  "version": "0.0.1",
+  "description": "A node server that provides an HTTP interface to holochain-rust",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4"
+  }
+}
