@@ -27,7 +27,7 @@ server.post('/call/', (req, res) => {
 	try {
 		const result = installedHapps[happ].call(zome, capability, func, JSON.stringify(data));
 		console.log("Result: ", result);
-		res.json(result);		
+		res.json(JSON.parse(result));		
 	} catch (err) {
 		console.error(err);
 		res.status(400).send("Could not call holochain function");
