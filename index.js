@@ -58,6 +58,7 @@ Object.keys(happs).forEach((appName) => {
 	try {
 		installedHapps[appName] = Container.loadAndInstantiate(happs[appName]);
 		installedHapps[appName].start();
+		
 	} catch (err) {
 		console.error(err);
 	}
