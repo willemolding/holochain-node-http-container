@@ -2,7 +2,7 @@ var fs = require("fs");
 const express = require('express')
 var bodyParser = require('body-parser');
 
-const Container = require('./holochain-nodejs/lib/container');
+const Container = require('@holochain/holochain-nodejs');
 
 const server = express();
 server.use(bodyParser.json());
@@ -21,8 +21,6 @@ server.post('/call/', (req, res) => {
 	console.log();
 	console.log("Calling: ", {happ, zome, capability, func});
 	console.log("With: ", data);
-
-
 
 	try {
 		const result = installedHapps[happ].call(zome, capability, func, JSON.stringify(data));

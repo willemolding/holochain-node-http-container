@@ -1,3 +1,0 @@
-[submodule "holochain-nodejs"]
-	path = holochain-nodejs
-	url = https://github.com/willemolding/holochain-nodejs
